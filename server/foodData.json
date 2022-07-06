@@ -1,0 +1,54 @@
+{
+    "food": [
+        {
+            "name": "Lobster Roll",
+            "description": "It is made of lobster meat served on a grilled hot dog-style bun. The filling may also contain butter, lemon juice, salt, black pepper, with variants made in some parts of New England replacing the butter with mayonnaise.",
+            "price": "10"
+        },
+        {
+            "name": "Beef Wellington",
+            "description": "A traditional Beef Wellington consists of a beef tenderloin wrapped in layers of pate, duxelles (a finely chopped mushroom mixture), parma ham, and puff pastry, then baked.",
+            "price": "20"
+        },
+        {
+            "name": "Bun Dau Mam Tom",
+            "description": "A plate of Bun Dau Mam Tom consists of soft rice noodles, fried tofu, and fermented shrimp sauce has also earned its place in the capital's culinary history.",
+            "price": "30"
+        },
+        {
+            "name": "Strawberry Cake",
+            "description": "A fluffy vanilla cake is loaded with fresh sweet strawberries and a rich cream cheese whipped cream. The perfect summer recipe for any celebration or get together.",
+            "price": "40"
+        },
+        {
+            "name": "Katsu Curry",
+            "description": "The Japanese are deeply into curry and deep-fried food like pork tonkatsu. Pork katsu curry is a combination of pork tonkatsu and Japanese curry with rice on the side. A full plate of yumminess that is so hearty and flavorful.",
+            "price": "50"
+        },
+		{
+            "name": "Hainanese chicken rice",
+            "description": "The Hainanese chicken rice is a dish that consists of succulent steamed white chicken cut into bite-size pieces and served on fragrant rice with some light soy sauce. The dish is topped with sprigs of coriander leaf and sesame oil, and accompanied by a garlic-chilli dip",
+            "price": "60"
+        },
+		{
+            "name": "Dim Sum",
+            "description": "Dim sum is a traditional Chinese meal made up of small plates of dumplings and other snack dishes and is usually accompanied by tea.",
+            "price": "70"
+        },
+		{
+            "name": "Goi Cuon(Fresh spring roll)",
+            "description": "These fresh Vietnamese spring rolls are made with shrimp, vegetables, herbs, and rice noodles wrapped in rice paper. Vietnamese spring rolls are traditionally served with a dip made of fish sauce.",
+            "price": "80"
+        },
+		{
+            "name": "Mochi Ice Cream",
+            "description": "Mochi ice cream is a small, round confection consisting of a soft, pounded sticky rice dumpling (mochi) formed around an ice cream filling. The ice cream adds flavor and creaminess to the confection while the mochi adds sweetness and texture. The traditional ice cream flavors used are vanilla, chocolate and strawberry.",
+            "price": "90"
+        },
+		{
+            "name": "Chicken Salad",
+            "description": "Grilled Lemon Herb Mediterranean Chicken Salad is as close to perfect as you can get! Full of Mediterranean flavours: olives, tomatoes, cucumber, avocados, and chicken for a complete meal in a salad bowl!",
+            "price": "100"
+        }
+    ]
+}
