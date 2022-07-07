@@ -224,7 +224,7 @@ def show_menu(logo, btn, client, img_labels):
                 undo_btn.grid_remove()
                 order_frame1.forget()
                 
-                totalmoney_label.config(text="Total Money: " + str(totalmoney[0]))
+                totalmoney_label.config(text="Total Money: $" + str(totalmoney[0]))
                 totalmoney_label.pack()
             
             if (amount_dic[1] != 0):
@@ -258,7 +258,7 @@ def show_menu(logo, btn, client, img_labels):
                 undo_btn2.grid_remove()
                 order_frame2.forget()
                 
-                totalmoney_label.config(text="Total Money: " + str(totalmoney[0]))
+                totalmoney_label.config(text="Total Money: $" + str(totalmoney[0]))
                 totalmoney_label.pack()
             
             if (amount_dic[2] != 0):
@@ -292,7 +292,7 @@ def show_menu(logo, btn, client, img_labels):
                 undo_btn3.grid_remove()
                 order_frame3.forget()
                 
-                totalmoney_label.config(text="Total Money: " + str(totalmoney[0]))
+                totalmoney_label.config(text="Total Money: $" + str(totalmoney[0]))
                 totalmoney_label.pack()
             
             if (amount_dic[3] != 0):
@@ -326,7 +326,7 @@ def show_menu(logo, btn, client, img_labels):
                 undo_btn4.grid_remove()
                 order_frame4.forget()
                 
-                totalmoney_label.config(text="Total Money: " + str(totalmoney[0]))
+                totalmoney_label.config(text="Total Money: $" + str(totalmoney[0]))
                 totalmoney_label.pack()
             
             if (amount_dic[4] != 0):
@@ -360,7 +360,7 @@ def show_menu(logo, btn, client, img_labels):
                 undo_btn5.grid_remove()
                 order_frame5.forget()
                 
-                totalmoney_label.config(text="Total Money: " + str(totalmoney[0]))
+                totalmoney_label.config(text="Total Money: $" + str(totalmoney[0]))
                 totalmoney_label.pack()
             
             if (amount_dic[5] != 0):
@@ -394,7 +394,7 @@ def show_menu(logo, btn, client, img_labels):
                 undo_btn6.grid_remove()
                 order_frame6.forget()
                 
-                totalmoney_label.config(text="Total Money: " + str(totalmoney[0]))
+                totalmoney_label.config(text="Total Money: $" + str(totalmoney[0]))
                 totalmoney_label.pack()
             
             if (amount_dic[6] != 0):
@@ -428,7 +428,7 @@ def show_menu(logo, btn, client, img_labels):
                 undo_btn7.grid_remove()
                 order_frame7.forget()
                 
-                totalmoney_label.config(text="Total Money: " + str(totalmoney[0]))
+                totalmoney_label.config(text="Total Money: $" + str(totalmoney[0]))
                 totalmoney_label.pack()
             
             if (amount_dic[7] != 0):
@@ -463,7 +463,7 @@ def show_menu(logo, btn, client, img_labels):
                 undo_btn8.grid_remove()
                 order_frame8.forget()
                 
-                totalmoney_label.config(text="Total Money: " + str(totalmoney[0]))
+                totalmoney_label.config(text="Total Money: $" + str(totalmoney[0]))
                 totalmoney_label.pack()
             
             if (amount_dic[8] != 0):
@@ -498,7 +498,7 @@ def show_menu(logo, btn, client, img_labels):
                 undo_btn9.grid_remove()
                 order_frame9.forget()
                 
-                totalmoney_label.config(text="Total Money: " + str(totalmoney[0]))
+                totalmoney_label.config(text="Total Money: $" + str(totalmoney[0]))
                 totalmoney_label.pack()
             
             if (amount_dic[9] != 0):
@@ -532,7 +532,7 @@ def show_menu(logo, btn, client, img_labels):
                 undo_btn10.grid_remove()
                 order_frame10.forget()
                 
-                totalmoney_label.config(text="Total Money: " + str(totalmoney[0]))
+                totalmoney_label.config(text="Total Money: $" + str(totalmoney[0]))
                 totalmoney_label.pack()
             
             if (amount_dic[10] != 0):
@@ -717,7 +717,7 @@ def show_menu(logo, btn, client, img_labels):
                 food_description1 = Food_Info[0]['description']
                 name_label1 = Label(wrap_frame1, text=food_name1, font='Roboto 16 bold',wraplength=200)
                 description_label1 = Label(wrap_frame1, wraplength=200 ,text=food_description1, justify=LEFT) 
-                price1 = Label(wrap_frame1, text="Price: " + Food_Info[0]['price'], justify=LEFT)
+                price1 = Label(wrap_frame1, text="Price: $" + Food_Info[0]['price'], justify=LEFT)
                 
                 name_label1.grid(row=1, column=0, pady=(0, 20), padx=20)
                 description_label1.grid(row=2, column=0, pady=20, padx=20)
@@ -757,7 +757,7 @@ def show_menu(logo, btn, client, img_labels):
                 food_description2 = Food_Info[1]['description']
                 name_label2 = Label(wrap_frame2, text=food_name2, font='Roboto 16 bold',wraplength=200)
                 description_label2 = Label(wrap_frame2, wraplength=200 ,text=food_description2, justify=LEFT) 
-                price2 = Label(wrap_frame2, text="Price: " + Food_Info[1]['price'], justify=LEFT)
+                price2 = Label(wrap_frame2, text="Price: $" + Food_Info[1]['price'], justify=LEFT)
                 
                 name_label2.grid(row=1, column=0, pady=(0, 20), padx=20)
                 description_label2.grid(row=2, column=0,  pady=20, padx=20)
@@ -797,7 +797,7 @@ def show_menu(logo, btn, client, img_labels):
                 food_description3 = Food_Info[2]['description']
                 name_label3 = Label(wrap_frame3, text=food_name3, font='Roboto 16 bold',wraplength=200)
                 description_label3 = Label(wrap_frame3, wraplength=200 ,text=food_description3, justify=LEFT) 
-                price3 = Label(wrap_frame3, text="Price: " + Food_Info[2]['price'], justify=LEFT)
+                price3 = Label(wrap_frame3, text="Price: $" + Food_Info[2]['price'], justify=LEFT)
                 
                 name_label3.grid(row=1, column=0, pady=(0,20), padx=20)
                 description_label3.grid(row=2, column=0,  pady=20, padx=20)
@@ -837,7 +837,7 @@ def show_menu(logo, btn, client, img_labels):
                 food_description4 = Food_Info[3]['description']
                 name_label4 = Label(wrap_frame4, text=food_name4, font='Roboto 16 bold',wraplength=200)
                 description_label4 = Label(wrap_frame4, wraplength=200 ,text=food_description4, justify=LEFT) 
-                price4 = Label(wrap_frame4, text="Price: " + Food_Info[3]['price'], justify=LEFT)
+                price4 = Label(wrap_frame4, text="Price: $" + Food_Info[3]['price'], justify=LEFT)
                 
                 name_label4.grid(row=1, column=0, pady=(0, 20), padx=20)
                 description_label4.grid(row=2, column=0,  pady=20, padx=20)
@@ -877,7 +877,7 @@ def show_menu(logo, btn, client, img_labels):
                 food_description5 = Food_Info[4]['description']
                 name_label5 = Label(wrap_frame5, text=food_name5, font='Roboto 16 bold',wraplength=200)
                 description_label5 = Label(wrap_frame5, wraplength=200 ,text=food_description5, justify=LEFT) 
-                price5 = Label(wrap_frame5, text="Price: " + Food_Info[4]['price'], justify=LEFT)
+                price5 = Label(wrap_frame5, text="Price: $" + Food_Info[4]['price'], justify=LEFT)
                 
                 name_label5.grid(row=1, column=0, pady=(0, 20), padx=20)
                 description_label5.grid(row=2, column=0,  pady=20, padx=20)
@@ -917,7 +917,7 @@ def show_menu(logo, btn, client, img_labels):
                 food_description6 = Food_Info[5]['description']
                 name_label6 = Label(wrap_frame6, text=food_name6, font='Roboto 16 bold',wraplength=200)
                 description_label6 = Label(wrap_frame6, wraplength=200 ,text=food_description6, justify=LEFT) 
-                price6 = Label(wrap_frame6, text="Price: " + Food_Info[5]['price'], justify=LEFT)
+                price6 = Label(wrap_frame6, text="Price: $" + Food_Info[5]['price'], justify=LEFT)
                 
                 name_label6.grid(row=1, column=0, pady=(0, 20), padx=20)
                 description_label6.grid(row=2, column=0,  pady=20, padx=20)
@@ -957,7 +957,7 @@ def show_menu(logo, btn, client, img_labels):
                 food_description7 = Food_Info[6]['description']
                 name_label7 = Label(wrap_frame7, text=food_name7, font='Roboto 16 bold',wraplength=200)
                 description_label7 = Label(wrap_frame7, wraplength=200 ,text=food_description7, justify=LEFT) 
-                price7 = Label(wrap_frame7, text="Price: " + Food_Info[6]['price'], justify=LEFT)
+                price7 = Label(wrap_frame7, text="Price: $" + Food_Info[6]['price'], justify=LEFT)
                 
                 name_label7.grid(row=1, column=0, pady=(0, 20), padx=20)
                 description_label7.grid(row=2, column=0,  pady=20, padx=20)
@@ -997,7 +997,7 @@ def show_menu(logo, btn, client, img_labels):
                 food_description8 = Food_Info[7]['description']
                 name_label8 = Label(wrap_frame8, text=food_name8, font='Roboto 16 bold',wraplength=200)
                 description_label8 = Label(wrap_frame8, wraplength=200 ,text=food_description8, justify=LEFT) 
-                price8 = Label(wrap_frame8, text="Price: " + Food_Info[7]['price'], justify=LEFT)
+                price8 = Label(wrap_frame8, text="Price: $" + Food_Info[7]['price'], justify=LEFT)
                 
                 name_label8.grid(row=1, column=0, pady=(0, 20), padx=20)
                 description_label8.grid(row=2, column=0,  pady=20, padx=20)
@@ -1037,7 +1037,7 @@ def show_menu(logo, btn, client, img_labels):
                 food_description9 = Food_Info[8]['description']
                 name_label9 = Label(wrap_frame9, text=food_name9, font='Roboto 16 bold',wraplength=200)
                 description_label9 = Label(wrap_frame9, wraplength=200 ,text=food_description9, justify=LEFT) 
-                price9 = Label(wrap_frame9, text="Price: " + Food_Info[8]['price'], justify=LEFT)
+                price9 = Label(wrap_frame9, text="Price: $" + Food_Info[8]['price'], justify=LEFT)
                 
                 name_label9.grid(row=1, column=0, pady=(0, 20), padx=20)
                 description_label9.grid(row=2, column=0,  pady=20, padx=20)
@@ -1077,7 +1077,7 @@ def show_menu(logo, btn, client, img_labels):
                 food_description10 = Food_Info[9]['description']
                 name_label10 = Label(wrap_frame10, text=food_name10, font='Roboto 16 bold',wraplength=200)
                 description_label10 = Label(wrap_frame10, wraplength=200 ,text=food_description10, justify=LEFT) 
-                price10 = Label(wrap_frame10, text="Price: " + Food_Info[9]['price'], justify=LEFT)
+                price10 = Label(wrap_frame10, text="Price: $" + Food_Info[9]['price'], justify=LEFT)
                 
                 name_label10.grid(row=1, column=0, pady=(0, 20), padx=20)
                 description_label10.grid(row=2, column=0,  pady=20, padx=20)
@@ -1250,9 +1250,9 @@ show_welcome()
 root.mainloop()
 msg = "FINISH"
 client.sendall(msg.encode(FORMAT))
-client.recv(1024)
+client.recv(4096)
 client.sendall(msg.encode(FORMAT))
-print(STATE)
+# print(STATE)
 
 client.close()
 # except:

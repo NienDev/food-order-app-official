@@ -108,7 +108,7 @@ def handleClient(conn, addr):
         print(orderData)
         msg = conn.recv(4096) #waiting for the next order
         conn.sendall(msg)
-        finish_msg = conn.recv(1024).decode(FORMAT)
+        finish_msg = conn.recv(4096).decode(FORMAT)
     
     conn.close()
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -132,3 +132,4 @@ while (nclient < 3):
     nclient += 1
     
 input()
+

@@ -1,18 +1,5 @@
 [
   {
-    "ID_Client": 1,
-    "Food_List": [
-      {
-        "Id": 1,
-        "Food_name": "Fried Chicken",
-        "Quantity": 1,
-        "Price": 100,
-        "Total": 100
-      }
-    ],
-    "Total": 100
-  },
-  {
     "ID_Client": 50470,
     "Food_List": [
       {
@@ -254,40 +241,6 @@
       }
     ],
     "Total": 40
-  },
-  {
-    "ID_Client": 49615,
-    "Food_List": [
-      {
-        "Id": 1,
-        "Food_name": "Beef Wellington",
-        "Quantity": 1,
-        "Price": "20",
-        "Total": 20
-      },
-      {
-        "Id": 3,
-        "Food_name": "Strawberry Cake",
-        "Quantity": 1,
-        "Price": "40",
-        "Total": 40
-      },
-      {
-        "Id": 5,
-        "Food_name": "Hainanese chicken rice",
-        "Quantity": 2,
-        "Price": "60",
-        "Total": 120
-      },
-      {
-        "Id": 8,
-        "Food_name": "Mochi Ice Cream",
-        "Quantity": 1,
-        "Price": "90",
-        "Total": 90
-      }
-    ],
-    "Total": 270
   },
   {
     "ID_Client": 49617,
@@ -777,5 +730,170 @@
       }
     ],
     "Total": 20
+  },
+  {
+    "ID_Client": 49802,
+    "Food_List": [
+      {
+        "Id": 0,
+        "Food_name": "Lobster Roll",
+        "Quantity": 1,
+        "Price": "10",
+        "Total": 10
+      },
+      {
+        "Id": 1,
+        "Food_name": "Beef Wellington",
+        "Quantity": 1,
+        "Price": "20",
+        "Total": 20
+      },
+      {
+        "Id": 3,
+        "Food_name": "Strawberry Cake",
+        "Quantity": 1,
+        "Price": "40",
+        "Total": 40
+      },
+      {
+        "Id": 5,
+        "Food_name": "Hainanese chicken rice",
+        "Quantity": 1,
+        "Price": "60",
+        "Total": 60
+      },
+      {
+        "Id": 8,
+        "Food_name": "Mochi Ice Cream",
+        "Quantity": 1,
+        "Price": "90",
+        "Total": 90
+      }
+    ],
+    "Total": 220
+  },
+  {
+    "ID_Client": 49908,
+    "Food_List": [
+      {
+        "Id": 8,
+        "Food_name": "Mochi Ice Cream",
+        "Quantity": 1,
+        "Price": "90",
+        "Total": 90
+      }
+    ],
+    "Total": 90
+  },
+  {
+    "ID_Client": 49916,
+    "Food_List": [
+      {
+        "Id": 1,
+        "Food_name": "Beef Wellington",
+        "Quantity": 1,
+        "Price": "20",
+        "Total": 20
+      }
+    ],
+    "Total": 20
+  },
+  {
+    "ID_Client": 49933,
+    "Food_List": [
+      {
+        "Id": 1,
+        "Food_name": "Beef Wellington",
+        "Quantity": 2,
+        "Price": "20",
+        "Total": 40
+      }
+    ],
+    "Total": 40
+  },
+  {
+    "ID_Client": 49938,
+    "Food_List": [
+      {
+        "Id": 1,
+        "Food_name": "Beef Wellington",
+        "Quantity": 1,
+        "Price": "20",
+        "Total": 20
+      }
+    ],
+    "Total": 20
+  },
+  {
+    "ID_Client": 49947,
+    "Food_List": [
+      {
+        "Id": 1,
+        "Food_name": "Beef Wellington",
+        "Quantity": 1,
+        "Price": "20",
+        "Total": 20
+      }
+    ],
+    "Total": 20
+  },
+  {
+    "ID_Client": 49967,
+    "Food_List": [
+      {
+        "Id": 1,
+        "Food_name": "Beef Wellington",
+        "Quantity": 1,
+        "Price": "20",
+        "Total": 20
+      }
+    ],
+    "Total": 20
+  },
+  {
+    "ID_Client": 55155,
+    "Food_List": [
+      {
+        "Id": 0,
+        "Food_name": "Lobster Roll",
+        "Quantity": 1,
+        "Price": "10",
+        "Total": 10
+      },
+      {
+        "Id": 1,
+        "Food_name": "Beef Wellington",
+        "Quantity": 1,
+        "Price": "20",
+        "Total": 20
+      }
+    ],
+    "Total": 30
+  },
+  {
+    "ID_Client": 55160,
+    "Food_List": [
+      {
+        "Id": 0,
+        "Food_name": "Lobster Roll",
+        "Quantity": 1,
+        "Price": "10",
+        "Total": 10
+      }
+    ],
+    "Total": 10
+  },
+  {
+    "ID_Client": 55158,
+    "Food_List": [
+      {
+        "Id": 1,
+        "Food_name": "Beef Wellington",
+        "Quantity": 2,
+        "Price": "20",
+        "Total": 40
+      }
+    ],
+    "Total": 40
   }
 ]
