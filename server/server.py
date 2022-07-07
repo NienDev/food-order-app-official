@@ -46,7 +46,7 @@ def sendClientInfo(orderData, addr, amount_dic):
                 with open('orderData.json', 'w') as f:
                     json.dump(orderData, f, indent=2)
                 for food in oldorder['Food_List']:
-                    amount_dic[int(food['Id']) + 1] += 1
+                    amount_dic[int(food['Id']) + 1] += int(food['Quantity'])
                 
                 break
     if (found == True):

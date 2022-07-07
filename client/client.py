@@ -241,7 +241,7 @@ def show_menu(logo, btn, client, img_labels):
                 text_label = Label(order_frame1, text=Food_Info[0]['name'], justify=LEFT, font='Roboto 16 bold')
                 text_label.grid(row=0, column=1, columnspan=2, pady=20, sticky="sw")
                 
-                amount_label = Label(order_frame1, text="Amount: " +  str(amount_dic[1]) + "\nPrice: " + Food_Info[0]['price'], justify=LEFT)
+                amount_label = Label(order_frame1, text="Amount: " +  str(amount_dic[1]) + "\nPrice: $" + Food_Info[0]['price'], justify=LEFT)
                 amount_label.grid(row=1, column=1, pady=20,sticky="nw")
                 
                 undo_btn = Button(order_frame1, text="UNDO", command=remove_order1)
@@ -275,7 +275,7 @@ def show_menu(logo, btn, client, img_labels):
                 text_label2 = Label(order_frame2, text=Food_Info[1]['name'], justify=LEFT, font='Roboto 16 bold')
                 text_label2.grid(row=0, column=1, columnspan=2, pady=20, sticky="sw")
                 
-                amount_label2 = Label(order_frame2, text="Amount: " +  str(amount_dic[2]) + "\nPrice: " + Food_Info[1]['price'], justify=LEFT)
+                amount_label2 = Label(order_frame2, text="Amount: " +  str(amount_dic[2]) + "\nPrice: $" + Food_Info[1]['price'], justify=LEFT)
                 amount_label2.grid(row=1, column=1, pady=20,sticky="nw")
                 
                 undo_btn2 = Button(order_frame2, text="UNDO", command=remove_order2)
@@ -309,7 +309,7 @@ def show_menu(logo, btn, client, img_labels):
                 text_label3 = Label(order_frame3, text=Food_Info[2]['name'], justify=LEFT, font='Roboto 16 bold')
                 text_label3.grid(row=0, column=1, columnspan=2, pady=20, sticky="sw")
                 
-                amount_label3 = Label(order_frame3, text="Amount: " +  str(amount_dic[3]) + "\nPrice: " + Food_Info[2]['price'], justify=LEFT)
+                amount_label3 = Label(order_frame3, text="Amount: " +  str(amount_dic[3]) + "\nPrice: $" + Food_Info[2]['price'], justify=LEFT)
                 amount_label3.grid(row=1, column=1, pady=20,sticky="nw")
                 
                 undo_btn3 = Button(order_frame3, text="UNDO", command=remove_order3)
@@ -343,7 +343,7 @@ def show_menu(logo, btn, client, img_labels):
                 text_label4 = Label(order_frame4, text=Food_Info[3]['name'], justify=LEFT, font='Roboto 16 bold')
                 text_label4.grid(row=0, column=1, columnspan=2, pady=20, sticky="sw")
                 
-                amount_label4 = Label(order_frame4, text="Amount: " +  str(amount_dic[4]) + "\nPrice: " + Food_Info[3]['price'], justify=LEFT)
+                amount_label4 = Label(order_frame4, text="Amount: " +  str(amount_dic[4]) + "\nPrice: $" + Food_Info[3]['price'], justify=LEFT)
                 amount_label4.grid(row=1, column=1, pady=20,sticky="nw")
                 
                 undo_btn4 = Button(order_frame4, text="UNDO", command=remove_order4)
@@ -377,7 +377,7 @@ def show_menu(logo, btn, client, img_labels):
                 text_label5 = Label(order_frame5, text=Food_Info[4]['name'], justify=LEFT, font='Roboto 16 bold')
                 text_label5.grid(row=0, column=1, columnspan=2, pady=20, sticky="sw")
                 
-                amount_label5 = Label(order_frame5, text="Amount: " +  str(amount_dic[5]) + "\nPrice: " + Food_Info[4]['price'], justify=LEFT)
+                amount_label5 = Label(order_frame5, text="Amount: " +  str(amount_dic[5]) + "\nPrice: $" + Food_Info[4]['price'], justify=LEFT)
                 amount_label5.grid(row=1, column=1, pady=20,sticky="nw")
                 
                 undo_btn5 = Button(order_frame5, text="UNDO", command=remove_order5)
@@ -411,7 +411,7 @@ def show_menu(logo, btn, client, img_labels):
                 text_label6 = Label(order_frame6, text=Food_Info[5]['name'], justify=LEFT, font='Roboto 16 bold')
                 text_label6.grid(row=0, column=1, columnspan=2, pady=20, sticky="sw")
                 
-                amount_label6 = Label(order_frame6, text="Amount: " +  str(amount_dic[6]) + "\nPrice: " + Food_Info[5]['price'], justify=LEFT)
+                amount_label6 = Label(order_frame6, text="Amount: " +  str(amount_dic[6]) + "\nPrice: $" + Food_Info[5]['price'], justify=LEFT)
                 amount_label6.grid(row=1, column=1, pady=20,sticky="nw")
                 
                 undo_btn6 = Button(order_frame6, text="UNDO", command=remove_order6)
@@ -445,7 +445,7 @@ def show_menu(logo, btn, client, img_labels):
                 text_label7 = Label(order_frame7, text=Food_Info[6]['name'], justify=LEFT, font='Roboto 16 bold')
                 text_label7.grid(row=0, column=1, columnspan=2, pady=20, sticky="sw")
                 
-                amount_label7 = Label(order_frame7, text="Amount: " +  str(amount_dic[7]) + "\nPrice: " + Food_Info[6]['price'], justify=LEFT)
+                amount_label7 = Label(order_frame7, text="Amount: " +  str(amount_dic[7]) + "\nPrice: $" + Food_Info[6]['price'], justify=LEFT)
                 amount_label7.grid(row=1, column=1, pady=20,sticky="nw")
                 
                 undo_btn7 = Button(order_frame7, text="UNDO", command=remove_order7)
@@ -480,7 +480,7 @@ def show_menu(logo, btn, client, img_labels):
                 text_label8 = Label(order_frame8, text=Food_Info[7]['name'], justify=LEFT, font='Roboto 16 bold')
                 text_label8.grid(row=0, column=1, columnspan=2, pady=20, sticky="sw")
                 
-                amount_label8 = Label(order_frame8, text="Amount: " +  str(amount_dic[8]) + "\nPrice: " + Food_Info[7]['price'], justify=LEFT)
+                amount_label8 = Label(order_frame8, text="Amount: " +  str(amount_dic[8]) + "\nPrice: $" + Food_Info[7]['price'], justify=LEFT)
                 amount_label8.grid(row=1, column=1, pady=20,sticky="nw")
                 
                 undo_btn8 = Button(order_frame8, text="UNDO", command=remove_order8)
@@ -515,7 +515,7 @@ def show_menu(logo, btn, client, img_labels):
                 text_label9 = Label(order_frame9, text=Food_Info[8]['name'], justify=LEFT, font='Roboto 16 bold')
                 text_label9.grid(row=0, column=1, columnspan=2, pady=20, sticky="sw")
                 
-                amount_label9 = Label(order_frame9, text="Amount: " +  str(amount_dic[9]) + "\nPrice: " + Food_Info[8]['price'], justify=LEFT)
+                amount_label9 = Label(order_frame9, text="Amount: " +  str(amount_dic[9]) + "\nPrice: $" + Food_Info[8]['price'], justify=LEFT)
                 amount_label9.grid(row=1, column=1, pady=20,sticky="nw")
                 
                 undo_btn9 = Button(order_frame9, text="UNDO", command=remove_order9)
@@ -549,7 +549,7 @@ def show_menu(logo, btn, client, img_labels):
                 text_label10 = Label(order_frame10, text=Food_Info[9]['name'], justify=LEFT, font='Roboto 16 bold')
                 text_label10.grid(row=0, column=1, columnspan=2, pady=20, sticky="sw")
                 
-                amount_label10 = Label(order_frame10, text="Amount: " +  str(amount_dic[10]) + "\nPrice: " + Food_Info[9]['price'], justify=LEFT)
+                amount_label10 = Label(order_frame10, text="Amount: " +  str(amount_dic[10]) + "\nPrice: $" + Food_Info[9]['price'], justify=LEFT)
                 amount_label10.grid(row=1, column=1, pady=20,sticky="nw")
                 
                 undo_btn10 = Button(order_frame10, text="UNDO", command=remove_order10)
