@@ -475,19 +475,6 @@
     "Total": 40
   },
   {
-    "ID_Client": 49938,
-    "Food_List": [
-      {
-        "Id": 1,
-        "Food_name": "Beef Wellington",
-        "Quantity": 1,
-        "Price": "20",
-        "Total": 20
-      }
-    ],
-    "Total": 20
-  },
-  {
     "ID_Client": 49947,
     "Food_List": [
       {
@@ -666,5 +653,216 @@
       }
     ],
     "Total": 40
+  },
+  {
+    "ID_Client": 51664,
+    "Food_List": [
+      {
+        "Id": 2,
+        "Food_name": "Bun Dau Mam Tom",
+        "Quantity": 2,
+        "Price": "30",
+        "Total": 60
+      }
+    ],
+    "Total": 60
+  },
+  {
+    "ID_Client": 49936,
+    "Food_List": [
+      {
+        "Id": 0,
+        "Food_name": "Lobster Roll",
+        "Quantity": 2,
+        "Price": "10",
+        "Total": 20
+      },
+      {
+        "Id": 3,
+        "Food_name": "Strawberry Cake",
+        "Quantity": 2,
+        "Price": "40",
+        "Total": 80
+      }
+    ],
+    "Total": 100
+  },
+  {
+    "ID_Client": 49940,
+    "Food_List": [
+      {
+        "Id": 0,
+        "Food_name": "Lobster Roll",
+        "Quantity": 1,
+        "Price": "10",
+        "Total": 10
+      },
+      {
+        "Id": 5,
+        "Food_name": "Hainanese chicken rice",
+        "Quantity": 3,
+        "Price": "60",
+        "Total": 180
+      }
+    ],
+    "Total": 190
+  },
+  {
+    "ID_Client": 49938,
+    "Food_List": [
+      {
+        "Id": 2,
+        "Food_name": "Bun Dau Mam Tom",
+        "Quantity": 2,
+        "Price": "30",
+        "Total": 60
+      }
+    ],
+    "Total": 60
+  },
+  {
+    "ID_Client": 64392,
+    "Food_List": [
+      {
+        "Id": 0,
+        "Food_name": "Lobster Roll",
+        "Quantity": 2,
+        "Price": "10",
+        "Total": 20
+      },
+      {
+        "Id": 1,
+        "Food_name": "Beef Wellington",
+        "Quantity": 1,
+        "Price": "20",
+        "Total": 20
+      }
+    ],
+    "Total": 40
+  },
+  {
+    "ID_Client": 64395,
+    "Food_List": [
+      {
+        "Id": 0,
+        "Food_name": "Lobster Roll",
+        "Quantity": 1,
+        "Price": "10",
+        "Total": 10
+      }
+    ],
+    "Total": 10
+  },
+  {
+    "ID_Client": 64411,
+    "Food_List": [
+      {
+        "Id": 0,
+        "Food_name": "Lobster Roll",
+        "Quantity": 1,
+        "Price": "10",
+        "Total": 10
+      }
+    ],
+    "Total": 10
+  },
+  {
+    "ID_Client": 64469,
+    "Food_List": [
+      {
+        "Id": 0,
+        "Food_name": "Lobster Roll",
+        "Quantity": 2,
+        "Price": "10",
+        "Total": 20
+      }
+    ],
+    "Total": 20
+  },
+  {
+    "ID_Client": 64487,
+    "Food_List": [
+      {
+        "Id": 0,
+        "Food_name": "Lobster Roll",
+        "Quantity": 1,
+        "Price": "10",
+        "Total": 10
+      }
+    ],
+    "Total": 10
+  },
+  {
+    "ID_Client": 64491,
+    "Food_List": [
+      {
+        "Id": 1,
+        "Food_name": "Beef Wellington",
+        "Quantity": 2,
+        "Price": "20",
+        "Total": 40
+      }
+    ],
+    "Total": 40
+  },
+  {
+    "ID_Client": 65045,
+    "Food_List": [
+      {
+        "Id": 2,
+        "Food_name": "Bun Dau Mam Tom",
+        "Quantity": 3,
+        "Price": "30",
+        "Total": 90
+      }
+    ],
+    "Total": 90
+  },
+  {
+    "ID_Client": 65049,
+    "Food_List": [
+      {
+        "Id": 0,
+        "Food_name": "Lobster Roll",
+        "Quantity": 2,
+        "Price": "10",
+        "Total": 20
+      },
+      {
+        "Id": 5,
+        "Food_name": "Hainanese chicken rice",
+        "Quantity": 3,
+        "Price": "60",
+        "Total": 180
+      }
+    ],
+    "Total": 200
+  },
+  {
+    "ID_Client": 65051,
+    "Food_List": [
+      {
+        "Id": 5,
+        "Food_name": "Hainanese chicken rice",
+        "Quantity": 2,
+        "Price": "60",
+        "Total": 120
+      },
+      {
+        "Id": 7,
+        "Food_name": "Goi Cuon(Fresh spring roll)",
+        "Quantity": 3,
+        "Price": "80",
+        "Total": 240
+      },
+      {
+        "Id": 8,
+        "Food_name": "Mochi Ice Cream",
+        "Quantity": 4,
+        "Price": "90",
+        "Total": 360
+      }
+    ],
+    "Total": 720
   }
 ]

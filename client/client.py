@@ -596,6 +596,8 @@ def show_menu(logo, btn, client, img_labels):
                 client.recv(4096)
                 client.sendall("Still waiting".encode(FORMAT))
                 client.recv(4096)
+                #fixing
+                client.recv(4096)
                 
             def show_client_id():
                 thanks_window = Toplevel(root)
@@ -636,8 +638,8 @@ def show_menu(logo, btn, client, img_labels):
                 frame.destroy()
                 # show_welcome()
                 time.sleep(5)
-                root.destroy()
                 update_data_to_server()
+                root.destroy()
                 
             def show_invalid():
                 thanks_window = Toplevel(root)

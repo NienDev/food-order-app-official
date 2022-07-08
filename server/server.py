@@ -37,7 +37,7 @@ def deleteOrder(orderData, newOrder):
            
 def sendClientInfo(orderData, addr, amount_dic):
     for idx, order in enumerate(orderData):
-        print(order['ID_Client'], addr)
+        # print(order['ID_Client'], addr)
         found = False
         if (str(order['ID_Client']) == str(addr)):
                 found = True
@@ -105,7 +105,8 @@ def handleClient(conn, addr):
         with open('orderData.json', 'w') as f:
             json.dump(orderData, f, indent=2)
         
-        print(orderData)
+        # print(orderData)
+        print("Successfully updated Food Order with ID:", newOrder['ID_Client']);
         msg = conn.recv(4096) #waiting for the next order
         conn.sendall(msg)
         finish_msg = conn.recv(4096).decode(FORMAT)
