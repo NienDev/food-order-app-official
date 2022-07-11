@@ -3,10 +3,19 @@ import os
 import pickle
 import json
 import threading
+from os.path import dirname, join
 
 HOST = "127.0.0.1"
 PORT = 65432
 FORMAT = "utf8"
+
+os.chdir(os.getcwd())
+
+def get_filename(filename):
+    here = dirname(__file__)
+    output = join(here, filename)
+    return output
+    
 
 def sendFile(conn):
     msg = "FOLDER"
@@ -42,9 +51,9 @@ def sendClientInfo(orderData, addr, amount_dic):
         if (str(order['ID_Client']) == str(addr)):
                 found = True
                 oldorder = order
-                deleteOrder(orderData, oldorder)
-                with open('orderData.json', 'w') as f:
-                    json.dump(orderData, f, indent=2)
+                # deleteOrder(orderData, oldorder)
+                # with open(get_filename('orderData.json'), 'w') as f:
+                    # json.dump(orderData, f, indent=2)
                 for food in oldorder['Food_List']:
                     amount_dic[int(food['Id']) + 1] += int(food['Quantity'])
                 
@@ -65,18 +74,19 @@ def handleClient(conn, addr):
     conn.sendall(msg.encode(FORMAT))
     if (msg == "FOOD"):
         #send FOOD LIST
-        with open('foodData.json') as f:
+        with open(get_filename('foodData.json')) as f:
             data = json.load(f)
         # print(data)
         food_list = pickle.dumps(data['food'])
         conn.sendall(food_list)
     conn.recv(1024) #client finish receiving food_list
     sendFile(conn)
-
-    with open('orderData.json') as f:
-        orderData = json.load(f)
     
     addr = conn.recv(4096).decode(FORMAT)
+    
+    with open(get_filename('orderData.json')) as f:
+        orderData = json.load(f)
+        
     if (addr != "DONE"):
         sendClientInfo(orderData, addr, amount_dic)
 
@@ -90,7 +100,7 @@ def handleClient(conn, addr):
         # newOrder = conn.recv(4096)
         # if ((msg != "FINISH") and (msg.decode(FORMAT) == "FINISH")):
             # break
-        with open('orderData.json') as f:
+        with open(get_filename('orderData.json')) as f:
             orderData = json.load(f)
 
         newOrder = msg
@@ -102,7 +112,7 @@ def handleClient(conn, addr):
         msg = "DONE"
         conn.sendall(msg.encode(FORMAT))
         
-        with open('orderData.json', 'w') as f:
+        with open(get_filename('orderData.json'), 'w') as f:
             json.dump(orderData, f, indent=2)
         
         # print(orderData)
@@ -120,7 +130,7 @@ server.bind((HOST, PORT))
 server.listen()
 
 nclient = 0
-while (nclient < 3):
+while (nclient < 100):
     # try:
     conn, addr = server.accept()
     thr = threading.Thread(target=handleClient, args=(conn, addr))
