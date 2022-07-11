@@ -91,15 +91,15 @@ def show_menu(logo, btn, client, img_labels):
         global IS_VALID
         
         def checkID():
-            def checkIDValid(e):
-                number = str(e.get())
-                if (number == ""):
+            def checkIDValid(ee):
+                number1 = str(ee.get())
+                if (number1 == ""):
                         credit_window.destroy()  
-                        number = "DONE"
-                        client.sendall(number.encode(FORMAT))
+                        number1 = "DONE"
+                        client.sendall(number1.encode(FORMAT))
                         return
                         
-                client.sendall(number.encode(FORMAT))
+                client.sendall(number1.encode(FORMAT))
                 found = client.recv(1024).decode(FORMAT)
                 #check whether client has ordered or not
                 global amount_dic
@@ -109,16 +109,17 @@ def show_menu(logo, btn, client, img_labels):
                 client.sendall("DONE".encode(FORMAT))
                 if (found == "FOUND"):
                     show_receipt()
+                ee.delete(0, END)
                 credit_window.destroy()  
                 
             credit_window =  Toplevel(root)
             credit_window.title = "ORDER ID"
-            credit_window.geometry("400x200")
+            
             label = Label(credit_window, text="Your Order ID\nYou can leave it blank if you have not order anything")
-            e = Entry(credit_window, text="your card NUMBER", width=25)
+            ee = Entry(credit_window, text="your card NUMBER", width=25)
             label.pack()
-            e.pack()
-            credit_btn = Button(credit_window, text="Confirm", command=lambda: checkIDValid(e))
+            ee.pack()
+            credit_btn = Button(credit_window, text="Confirm", command=lambda: checkIDValid(ee))
             credit_btn.pack()
         #turn off the show_welcome window
         
@@ -134,7 +135,28 @@ def show_menu(logo, btn, client, img_labels):
         main_frame =Frame(frame)
         main_frame.pack(fill=BOTH, expand=1)
             #create  a canvas
+            
+        # global my_canvas
         my_canvas = Canvas(main_frame)
+        
+        def _on_mousewheel(event):
+            my_canvas.yview_scroll(int(-1*(event.delta//120)), "units")
+        
+        def _bound_to_mousewheel(event):
+            my_canvas.bind_all("<MouseWheel>", _on_mousewheel)
+
+        def _unbound_to_mousewheel(event):
+            my_canvas.unbind_all("<MouseWheel>")
+        
+        my_canvas.bind('<Enter>', _bound_to_mousewheel)
+        my_canvas.bind('<Leave>', _unbound_to_mousewheel)
+
+        
+        # def _on_mousewheel(event):
+            # my_canvas.yview_scroll(-1*(event.delta//120), "units") 
+        
+        # my_canvas.bind_all("<MouseWheel>", _on_mousewheel)
+        
         my_canvas.pack(side=LEFT, fill=BOTH, expand=1)
             
             #add a scrollbar to canvas
@@ -197,6 +219,19 @@ def show_menu(logo, btn, client, img_labels):
             main_frame.pack(fill=BOTH, expand=1)
                 #create  a canvas
             my_canvas = Canvas(main_frame)
+            
+            def _on_mousewheel(event):
+                my_canvas.yview_scroll(int(-1*(event.delta//120)), "units")
+            
+            def _bound_to_mousewheel(event):
+                my_canvas.bind_all("<MouseWheel>", _on_mousewheel)
+
+            def _unbound_to_mousewheel(event):
+                my_canvas.unbind_all("<MouseWheel>")
+            
+            my_canvas.bind('<Enter>', _bound_to_mousewheel)
+            my_canvas.bind('<Leave>', _unbound_to_mousewheel)
+            
             my_canvas.pack(side=LEFT, fill=BOTH, expand=1)
                 
                 #add a scrollbar to canvas
@@ -644,7 +679,6 @@ def show_menu(logo, btn, client, img_labels):
             def show_invalid():
                 thanks_window = Toplevel(root)
                 thanks_window.title = "INVALID"
-                thanks_window.geometry("200x200")
                 label = Label(thanks_window, text="Your number is INVALID")
                 label.pack()
             
@@ -1038,7 +1072,7 @@ def show_menu(logo, btn, client, img_labels):
                 food_name9 = Food_Info[8]['name']
                 food_description9 = Food_Info[8]['description']
                 name_label9 = Label(wrap_frame9, text=food_name9, font='Roboto 16 bold',wraplength=200)
-                description_label9 = Label(wrap_frame9, wraplength=200 ,text=food_description9, justify=LEFT) 
+                description_label9 = Label(wrap_frame9, wraplength=300 ,text=food_description9, justify=LEFT) 
                 price9 = Label(wrap_frame9, text="Price: $" + Food_Info[8]['price'], justify=LEFT)
                 
                 name_label9.grid(row=1, column=0, pady=(0, 20), padx=20)
