@@ -51,9 +51,9 @@ def sendClientInfo(orderData, addr, amount_dic):
         if (str(order['ID_Client']) == str(addr)):
                 found = True
                 oldorder = order
-                # deleteOrder(orderData, oldorder)
-                # with open(get_filename('orderData.json'), 'w') as f:
-                    # json.dump(orderData, f, indent=2)
+                deleteOrder(orderData, oldorder)
+                with open(get_filename('orderData.json'), 'w') as f:
+                    json.dump(orderData, f, indent=2)
                 for food in oldorder['Food_List']:
                     amount_dic[int(food['Id']) + 1] += int(food['Quantity'])
                 
@@ -97,9 +97,6 @@ def handleClient(conn, addr):
     finish_msg = conn.recv(4096).decode(FORMAT)
     conn.sendall(finish_msg.encode(FORMAT))
     while (finish_msg != "FINISH"):
-        # newOrder = conn.recv(4096)
-        # if ((msg != "FINISH") and (msg.decode(FORMAT) == "FINISH")):
-            # break
         with open(get_filename('orderData.json')) as f:
             orderData = json.load(f)
 
