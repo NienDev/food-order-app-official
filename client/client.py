@@ -707,8 +707,8 @@ def show_menu(logo, btn, client, img_labels):
                 
             cash = IntVar()
             credit = IntVar()
-            paid_cash = Checkbutton(pop, text="Paid by cash", variable=cash)
-            paid_credit = Checkbutton(pop, text="Paid by credit card", variable=credit)
+            paid_cash = Radiobutton(pop, text="Paid by cash", variable=cash, value=1)
+            paid_credit = Radiobutton(pop, text="Paid by credit card", variable=cash, value=2)
             paid_cash.pack(side=LEFT)
             paid_credit.pack(side=LEFT)
             confirm_btn = Button(pop, text="Confirm", command=paid)
