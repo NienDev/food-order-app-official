@@ -8,6 +8,7 @@ from io import BytesIO
 from tkinter import *
 from PIL import ImageTk, Image
 from tkinter import ttk
+import tkinter.font as font
 
 HOST = "127.0.0.1"
 PORT = 65432
@@ -83,7 +84,7 @@ def recvAssetsFromServer(client):
         msg = "done"
         msg = client.sendall(msg.encode(FORMAT))
 
-def show_menu(logo, btn, client, img_labels):
+def     show_menu(logo, btn, client, img_labels):
         global root
         global Food_Info
         global amount_dic
@@ -116,7 +117,7 @@ def show_menu(logo, btn, client, img_labels):
             credit_window.title = "ORDER ID"
             
             label = Label(credit_window, text="Your Order ID\nYou can leave it blank if you have not order anything")
-            ee = Entry(credit_window, text="your card NUMBER", width=25)
+            ee = Entry(credit_window, justify=CENTER, width=25)
             label.pack()
             ee.pack()
             credit_btn = Button(credit_window, text="Confirm", command=lambda: checkIDValid(ee))
@@ -138,6 +139,7 @@ def show_menu(logo, btn, client, img_labels):
             
         # global my_canvas
         my_canvas = Canvas(main_frame)
+        my_canvas.configure(bg='#CEE5D0')
         
         def _on_mousewheel(event):
             my_canvas.yview_scroll(int(-1*(event.delta//120)), "units")
@@ -169,7 +171,8 @@ def show_menu(logo, btn, client, img_labels):
             
             #create another frame in canvas
         second_frame = Frame(my_canvas)
-            
+        second_frame.configure(bg='#CEE5D0')
+        
             #add that new frame to a window in the canvas
         my_canvas.create_window((0, 0), window=second_frame, anchor="nw")
         
@@ -741,29 +744,45 @@ def show_menu(logo, btn, client, img_labels):
                     print(amount_dic)
                     back_to_show_image()
                 
-                wrap_frame1 = LabelFrame(frame1)
+                wrap_frame1 = Frame(frame1)
                 wrap_frame1.grid(row=0,column=1)
                 
-                btn1 = Button(wrap_frame1, command=back_to_show_image, text="x")
-                btn1.grid(row=0, column=1, padx=10, pady=10)
+                f = font.Font(family="Arial Rounded MT Bold", size=20)
+                btn1 = Button(wrap_frame1, command=back_to_show_image, text="x", relief="flat", bg="#ECB390")
+                btn1['font'] = f
+                btn1.grid(row=0, column=1, sticky="e")
                 
              
         
                 food_name1 = Food_Info[0]['name']
                 food_description1 = Food_Info[0]['description']
-                name_label1 = Label(wrap_frame1, text=food_name1, font='Roboto 16 bold',wraplength=200)
-                description_label1 = Label(wrap_frame1, wraplength=200 ,text=food_description1, justify=LEFT) 
-                price1 = Label(wrap_frame1, text="Price: $" + Food_Info[0]['price'], justify=LEFT)
                 
-                name_label1.grid(row=1, column=0, pady=(0, 20), padx=20)
-                description_label1.grid(row=2, column=0, pady=20, padx=20)
-                price1.grid(row=3, column=0, pady=20, sticky="w", padx=20)
+                f = font.Font(family="Agency FB", size=18)
+                
+                name_label1 = Label(wrap_frame1, text=food_name1,wraplength=200)
+             
+                description_label1 = Label(wrap_frame1, wraplength=200 ,text=food_description1, justify=LEFT) 
+                description_label1['font'] = f
+                f = font.Font(family="Imprint MT Shadow", size=18, weight="bold")
+                price1 = Label(wrap_frame1, text="Price: $" + Food_Info[0]['price'], justify=LEFT)
+                price1['font'] = f
+                # name_label1.grid(row=1, column=0, pady=(0, 20), padx=20)
+                description_label1.grid(row=2, column=0, pady=20, padx=(40,0))
+                price1.grid(row=3, column=0, pady=20, sticky="w", padx=(40,0))
+                
+                def clicked(e):
+                    amount1.config(state=NORMAL)
+                    amount1.delete(0, END)
                 
                 amount1 = Entry(wrap_frame1, width=10, borderwidth=4)
                 amount1.insert(0, "Quantity")
+                amount1.config(state=DISABLED)
+                amount1.bind("<Button-1>", clicked)
                 amount1.grid(row=4,column=0, pady=20)
                 
-                order_btn1 = Button(wrap_frame1, text="Order", command=order1)
+                f = font.Font(family="Cooper Black", size=20)
+                order_btn1 = Button(wrap_frame1, text="Order", command=order1, relief="flat", bg="#94B49F", fg="white")
+                order_btn1['font'] = f
                 order_btn1.grid(row=4, column=1, padx=10)
             
             #image 2
@@ -799,11 +818,17 @@ def show_menu(logo, btn, client, img_labels):
                 description_label2.grid(row=2, column=0,  pady=20, padx=20)
                 price2.grid(row=3, column=0, pady=20, sticky="w", padx=20)
                 
+                def clicked(e):
+                    amount2.config(state=NORMAL)
+                    amount2.delete(0, END)
+                
                 amount2 = Entry(wrap_frame2, width=10, borderwidth=4)
                 amount2.insert(0, "Quantity")
+                amount2.config(state=DISABLED)
+                amount2.bind("<Button-1>", clicked)
                 amount2.grid(row=4,column=0, pady=20)
                 
-                order_btn2 = Button(wrap_frame2, text="Order", command=order2)
+                order_btn2 = Button(wrap_frame2, text="Order", command=order2,relief="ridge")
                 order_btn2.grid(row=4, column=1, padx=10)
             
             #image 3
@@ -839,11 +864,17 @@ def show_menu(logo, btn, client, img_labels):
                 description_label3.grid(row=2, column=0,  pady=20, padx=20)
                 price3.grid(row=3, column=0, pady=20, sticky="w", padx=20)
                 
+                def clicked(e):
+                    amount3.config(state=NORMAL)
+                    amount3.delete(0, END)
+                
                 amount3 = Entry(wrap_frame3, width=10, borderwidth=4)
                 amount3.insert(0, "Quantity")
+                amount3.config(state=DISABLED)
+                amount3.bind("<Button-1>", clicked)
                 amount3.grid(row=4,column=0, pady=20)
                 
-                order_btn3 = Button(wrap_frame3, text="Order", command=order3)
+                order_btn3 = Button(wrap_frame3, text="Order", command=order3,relief="ridge")
                 order_btn3.grid(row=4, column=1, padx=10)
             
             #image 4
@@ -879,11 +910,17 @@ def show_menu(logo, btn, client, img_labels):
                 description_label4.grid(row=2, column=0,  pady=20, padx=20)
                 price4.grid(row=3, column=0, pady=20, sticky="w", padx=20)
                 
+                def clicked(e):
+                    amount4.config(state=NORMAL)
+                    amount4.delete(0, END)
+                
                 amount4 = Entry(wrap_frame4, width=10, borderwidth=4)
                 amount4.insert(0, "Quantity")
+                amount4.config(state=DISABLED)
+                amount4.bind("<Button-1>", clicked)
                 amount4.grid(row=4,column=0, pady=20)
                 
-                order_btn4 = Button(wrap_frame4, text="Order", command=order4)
+                order_btn4 = Button(wrap_frame4, text="Order", command=order4,relief="ridge")
                 order_btn4.grid(row=4, column=1, padx=10)
             
             #image 5
@@ -919,11 +956,17 @@ def show_menu(logo, btn, client, img_labels):
                 description_label5.grid(row=2, column=0,  pady=20, padx=20)
                 price5.grid(row=3, column=0, pady=20, sticky="w", padx=20)
                 
+                def clicked(e):
+                    amount5.config(state=NORMAL)
+                    amount5.delete(0, END)
+                
                 amount5 = Entry(wrap_frame5, width=10, borderwidth=4)
                 amount5.insert(0, "Quantity")
+                amount5.config(state=DISABLED)
+                amount5.bind("<Button-1>", clicked)
                 amount5.grid(row=4,column=0, pady=20)
                 
-                order_btn5 = Button(wrap_frame5, text="Order", command=order5)
+                order_btn5 = Button(wrap_frame5, text="Order", command=order5,relief="ridge")
                 order_btn5.grid(row=4, column=1, padx=10)
             
             #image 6
@@ -951,19 +994,25 @@ def show_menu(logo, btn, client, img_labels):
         
                 food_name6 = Food_Info[5]['name']
                 food_description6 = Food_Info[5]['description']
-                name_label6 = Label(wrap_frame6, text=food_name6, font='Roboto 16 bold',wraplength=200)
-                description_label6 = Label(wrap_frame6, wraplength=200 ,text=food_description6, justify=LEFT) 
+                name_label6 = Label(wrap_frame6, text=food_name6, font='Roboto 16 bold',wraplength=250)
+                description_label6 = Label(wrap_frame6, wraplength=250 ,text=food_description6, justify=LEFT) 
                 price6 = Label(wrap_frame6, text="Price: $" + Food_Info[5]['price'], justify=LEFT)
                 
                 name_label6.grid(row=1, column=0, pady=(0, 20), padx=20)
                 description_label6.grid(row=2, column=0,  pady=20, padx=20)
                 price6.grid(row=3, column=0, pady=20, sticky="w", padx=20)
                 
+                def clicked(e):
+                    amount6.config(state=NORMAL)
+                    amount6.delete(0, END)
+                
                 amount6 = Entry(wrap_frame6, width=10, borderwidth=4)
                 amount6.insert(0, "Quantity")
+                amount6.config(state=DISABLED)
+                amount6.bind("<Button-1>", clicked)
                 amount6.grid(row=4,column=0, pady=20)
                 
-                order_btn6 = Button(wrap_frame6, text="Order", command=order6)
+                order_btn6 = Button(wrap_frame6, text="Order", command=order6,relief="ridge")
                 order_btn6.grid(row=4, column=1, padx=10)
             
             #image 7
@@ -999,11 +1048,17 @@ def show_menu(logo, btn, client, img_labels):
                 description_label7.grid(row=2, column=0,  pady=20, padx=20)
                 price7.grid(row=3, column=0, pady=20, sticky="w", padx=20)
                 
+                def clicked(e):
+                    amount7.config(state=NORMAL)
+                    amount7.delete(0, END)
+                
                 amount7 = Entry(wrap_frame7, width=10, borderwidth=4)
                 amount7.insert(0, "Quantity")
+                amount7.config(state=DISABLED)
+                amount7.bind("<Button-1>", clicked)
                 amount7.grid(row=4,column=0, pady=20)
                 
-                order_btn7 = Button(wrap_frame7, text="Order", command=order7)
+                order_btn7 = Button(wrap_frame7, text="Order", command=order7,relief="ridge")
                 order_btn7.grid(row=4, column=1, padx=10)
             
             #image 8
@@ -1039,11 +1094,17 @@ def show_menu(logo, btn, client, img_labels):
                 description_label8.grid(row=2, column=0,  pady=20, padx=20)
                 price8.grid(row=3, column=0, pady=20, sticky="w", padx=20)
                 
+                def clicked(e):
+                    amount8.config(state=NORMAL)
+                    amount8.delete(0, END)
+                
                 amount8 = Entry(wrap_frame8, width=10, borderwidth=4)
                 amount8.insert(0, "Quantity")
-                amount8.grid(row=4,column=0, pady=20)
                 
-                order_btn8 = Button(wrap_frame8, text="Order", command=order8)
+                amount8.grid(row=4,column=0, pady=20)
+                amount8.config(state=DISABLED)
+                amount8.bind("<Button-1>", clicked)
+                order_btn8 = Button(wrap_frame8, text="Order", command=order8,relief="ridge")
                 order_btn8.grid(row=4, column=1, padx=10)
             
             #image 9
@@ -1079,11 +1140,17 @@ def show_menu(logo, btn, client, img_labels):
                 description_label9.grid(row=2, column=0,  pady=20, padx=20)
                 price9.grid(row=3, column=0, pady=20, sticky="w", padx=20)
                 
+                def clicked(e):
+                    amount9.config(state=NORMAL)
+                    amount9.delete(0, END)
+                
                 amount9= Entry(wrap_frame9, width=10, borderwidth=4)
                 amount9.insert(0, "Quantity")
+                amount9.config(state=DISABLED)
+                amount9.bind("<Button-1>", clicked)
                 amount9.grid(row=4,column=0, pady=20)
                 
-                order_btn9 = Button(wrap_frame9, text="Order", command=order9)
+                order_btn9 = Button(wrap_frame9, text="Order", command=order9,relief="ridge")
                 order_btn9.grid(row=4, column=1, padx=10)
             
             #image 10
@@ -1119,26 +1186,32 @@ def show_menu(logo, btn, client, img_labels):
                 description_label10.grid(row=2, column=0,  pady=20, padx=20)
                 price10.grid(row=3, column=0, pady=20, sticky="w", padx=20)
                 
+                def clicked(e):
+                    amount10.config(state=NORMAL)
+                    amount10.delete(0, END)
+                
                 amount10= Entry(wrap_frame10, width=10, borderwidth=4)
                 amount10.insert(0, "Quantity")
+                amount10.config(state=DISABLED)
+                amount10.bind("<Button-1>", clicked)
                 amount10.grid(row=4,column=0, pady=20)
                 
-                order_btn10 = Button(wrap_frame10, text="Order", command=order10)
+                order_btn10 = Button(wrap_frame10, text="Order", command=order10,relief="ridge")
                 order_btn10.grid(row=4, column=1, padx=10)
             
             img1 = Image.open("./Assets/img10.jpg")
             img1 = ImageTk.PhotoImage(img1)
             
-            btn_img1 = Button(frame1, command=lambda: show_food_description1())
+            btn_img1 = Button(frame1, command=lambda: show_food_description1(), relief=FLAT)
             btn_img1.image = img1
             btn_img1['image']=img1
-            btn_img1.grid(row=0, column=0, padx=20, pady=20)
+            btn_img1.grid(row=0, column=0)
             
             
             img2 = Image.open("./Assets/img11.jpg")
             img2 = ImageTk.PhotoImage(img2)
             
-            btn_img2 = Button(frame2, command=lambda: show_food_description2())
+            btn_img2 = Button(frame2, command=lambda: show_food_description2(), relief=FLAT)
             btn_img2.image = img2
             btn_img2['image']=img2
             btn_img2.grid(row=0, column=1, padx=20, pady=20)
@@ -1147,7 +1220,7 @@ def show_menu(logo, btn, client, img_labels):
             img3 = Image.open("./Assets/img12.jpg")
             img3 = ImageTk.PhotoImage(img3)
             
-            btn_img3 = Button(frame3, command=lambda: show_food_description3())
+            btn_img3 = Button(frame3, command=lambda: show_food_description3(), relief=FLAT)
             btn_img3.image = img3
             btn_img3['image']=img3
             btn_img3.grid(row=0, column=0, padx=20, pady=20)
@@ -1156,7 +1229,7 @@ def show_menu(logo, btn, client, img_labels):
             img4 = Image.open("./Assets/img13.jpg")
             img4 = ImageTk.PhotoImage(img4)
              
-            btn_img4 = Button(frame4, command=lambda: show_food_description4())
+            btn_img4 = Button(frame4, command=lambda: show_food_description4(), relief=FLAT)
             btn_img4.image = img4
             btn_img4['image']=img4
             btn_img4.grid(row=0, column=0, padx=20, pady=20)
@@ -1165,7 +1238,7 @@ def show_menu(logo, btn, client, img_labels):
             img5 = Image.open("./Assets/img14.jpg")
             img5 = ImageTk.PhotoImage(img5)
             
-            btn_img5 = Button(frame5, command=lambda: show_food_description5())
+            btn_img5 = Button(frame5, command=lambda: show_food_description5(), relief=FLAT)
             btn_img5.image = img5
             btn_img5['image']=img5
             btn_img5.grid(row=0, column=0, padx=20, pady=20)
@@ -1174,7 +1247,7 @@ def show_menu(logo, btn, client, img_labels):
             img6 = Image.open("./Assets/img15.jpg")
             img6 = ImageTk.PhotoImage(img6)
             
-            btn_img6 = Button(frame6, command=lambda: show_food_description6())
+            btn_img6 = Button(frame6, command=lambda: show_food_description6(), relief=FLAT)
             btn_img6.image = img6
             btn_img6['image']=img6
             btn_img6.grid(row=0, column=1, padx=20, pady=20)
@@ -1183,7 +1256,7 @@ def show_menu(logo, btn, client, img_labels):
             img7 = Image.open("./Assets/img16.jpg")
             img7 = ImageTk.PhotoImage(img7)
             
-            btn_img7 = Button(frame7, command=lambda: show_food_description7())
+            btn_img7 = Button(frame7, command=lambda: show_food_description7(), relief=FLAT)
             btn_img7.image = img7
             btn_img7['image']=img7
             btn_img7.grid(row=0, column=0, padx=20, pady=20)
@@ -1192,7 +1265,7 @@ def show_menu(logo, btn, client, img_labels):
             img8 = Image.open("./Assets/img17.jpg")
             img8= ImageTk.PhotoImage(img8)
              
-            btn_img8 = Button(frame8, command=lambda: show_food_description8())
+            btn_img8 = Button(frame8, command=lambda: show_food_description8(), relief=FLAT)
             btn_img8.image = img8
             btn_img8['image']=img8
             btn_img8.grid(row=0, column=0, padx=20, pady=20)
@@ -1200,7 +1273,7 @@ def show_menu(logo, btn, client, img_labels):
             img9 = Image.open("./Assets/img18.jpg")
             img9 = ImageTk.PhotoImage(img9)
             
-            btn_img9 = Button(frame9, command=lambda: show_food_description9())
+            btn_img9 = Button(frame9, command=lambda: show_food_description9(), relief=FLAT)
             btn_img9.image = img9
             btn_img9['image']=img9
             btn_img9.grid(row=0, column=0, padx=20, pady=20)
@@ -1209,7 +1282,7 @@ def show_menu(logo, btn, client, img_labels):
             img10 = Image.open("./Assets/img19.jpg")
             img10= ImageTk.PhotoImage(img10)
              
-            btn_img10 = Button(frame10, command=lambda: show_food_description10())
+            btn_img10 = Button(frame10, command=lambda: show_food_description10(), relief=FLAT)
             btn_img10.image = img10
             btn_img10['image']=img10
             btn_img10.grid(row=0, column=0, padx=20, pady=20)
@@ -1262,7 +1335,10 @@ root.title("FOOD ORDER APP")
 root.iconbitmap("./Assets/img21.jpg")
 root.geometry("1360x700+0+0")
 root.configure(bg='#01001f')
-
+root.option_add("*Label*Background", "white")
+root.option_add("*LabelFrame*Background", "white")
+root.option_add("*Frame*Background", "white")
+root.option_add("*Entry*Background", "white")
 #widgets
 # FRAME = LabelFrame(root, padx=20, pady=20)
 LOGO = ImageTk.PhotoImage(Image.open("./Assets/img24.jpg"))
