@@ -703,17 +703,17 @@ def     show_menu(logo, btn, client, img_labels):
                 #fixing
                 client.recv(4096)
                 
-            def show_client_id():
-                thanks_window = Toplevel(root)
-                thanks_window.title = "ORDER ID"
-                thanks_window.config(bg="#94B49F")
-                f = font.Font(family="Cooper Black", size=16)
-                label = Label(thanks_window, text="Your order ID: " + str(client.getsockname()[1]),bg="#94B49F", fg="#fff")
-                label['font']=f
-                label.pack(padx=20,pady=10);
+            # def show_client_id():
+                # thanks_window = Toplevel(root)
+                # thanks_window.title = "ORDER ID"
+                # thanks_window.config(bg="#94B49F")
+                # f = font.Font(family="Cooper Black", size=16)
+                # label = Label(thanks_window, text="Your order ID: " + str(client.getsockname()[1]),bg="#94B49F", fg="#fff")
+                # label['font']=f
+                # label.pack(padx=20,pady=10);
                 
             def show_thank_window():
-                show_client_id()
+                # show_client_id()
                 screen_width = root.winfo_screenwidth()
                 screen_height = root.winfo_screenheight()
                 app_width = 400
@@ -724,6 +724,7 @@ def     show_menu(logo, btn, client, img_labels):
                 thanks_window = Toplevel(root)
                 thanks_window.title = "Finish ordering"
                 thanks_window.geometry(f'{app_width}x{app_height}+{int(x)}+{int(y)}')
+                thanks_window.config(bg="#94B49F")
                 
                 img = Image.open("./Assets/img23.jpg")
                 img.thumbnail((400,400))
@@ -731,6 +732,10 @@ def     show_menu(logo, btn, client, img_labels):
                 img = Image.open("./Assets/thankyou.jpg")
                 img = ImageTk.PhotoImage(img)
 
+                f = font.Font(family="Cooper Black", size=16)
+                label = Label(thanks_window, text="Your order ID: " + str(client.getsockname()[1]),bg="#94B49F", fg="#fff")
+                label['font']=f
+                label.pack(padx=20,pady=10);
                 label_img = Label(thanks_window)
                 label_img.image = img
                 label_img['image']=img
